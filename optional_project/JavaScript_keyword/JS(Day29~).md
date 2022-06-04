@@ -146,7 +146,7 @@ yjyj *= 5; -> yjyj *5
 
   - but, 띄어쓰기는 없고 - 는 실행되지않는다.
 
-# Day - 33
+# Day - 33 ~ 34
 
 ## 고급 Java Script - DOM을 사용한 작업
 
@@ -154,6 +154,45 @@ yjyj *= 5; -> yjyj *5
 
 - DOM 은 페이지의 요소를 선택, 조작하고 페이지의 HTML 요소와 스타일을 조작하기 위해 JS를 사용해 변경할 수 있다.
 
+- JS와 상호작용 할 수 있는 DOM은 기본적으로 HTML 코드의 번역이다.
+
 ### 2. 전역 "window" & "document" 객체
 
--
+- window 객체의 document속성을 사용해 DOM에 접근한다.
+
+- window 객체의 모든 속성과 메서드는 자동으로 변수와 함수를 전역적으로 사용할 수 있다.
+
+  - ex. window.document
+
+- console.dir()를 사용하여 이 문서에 저장된 진짜 객체를 출력할 수 있다.
+
+### 3. script 로드하기
+
+- head 섹션에 js 파일을 연결한 script가 있으면 자바스크립트 코드가 먼저 실행되고 이후에 body 섹션의 코드가 실행되기 때문에 js파일에 저장된 DOM과 상호작용하는 코드 분석을 못하게 된다.
+
+  - 그래서 script 코드를 body 섹션의 코드 밑에 적으면 정상적으로 실행된다.
+
+  - 더 추천하는 방법은 script 요소를 head 섹션에 두고 script 요소에 defer 속성을 추가하는 것이다.
+
+    - defer 속성은 전체 문서가 분석될 때까지 script 실행을 지연시키는 명령을 브라우저에게 알려준다.
+
+### 4. DOM 탐색
+
+- 정확한 코드의 구조가 기억나지 않아 DOM 탐색이 힘들때는 utility method를 사용해 특정 요소를 찾는다.
+
+  - 예를 들어 ID 또는 CSS 선택자를 이용한다. ex. document.getElimentById('some-id'); ,
+    document.querySelector('some-class')
+
+- 위처럼 특정 ID 또는 특정 클래스를 가진 요소가 있다면 특정 요소에 대한 접근 권한을 부여한다.
+
+### 5. 요소 쿼리
+
+- getElementById 는 고유 식별자인 해당 Id로 요소에 접속하는 방법이다.
+
+  - document.getElementById('some-id'): ID로 HTML 요소 선택
+
+- querySelector는 매개 변수로 Id를 사용하지 않고 CSS 선택자를 사용한다.
+
+  - document.querySelector('some-css-selector'): 제공된 CSS 선택자에 의해 충족/선택된 첫 번째 HTML 요소.
+
+  - document.querySelectorAll('some-css-selector'): 제공된 CSS 선택자에 의해 충족/선택된 일치하는 모든 HTML 요소를 선택한다.

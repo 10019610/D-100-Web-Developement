@@ -1,6 +1,11 @@
-console.log(window);
+// document.body.children[1].children[0].href = "https://google.com";
 
-alert();
-window.alert();
+// console.dir(window.document)
+// alert();
+// window.alert();
 
-console.log(document);
+let anchorElement = document.getElementById("external-link");
+anchorElement.href = "https://google.com";
+
+anchorElement.document.querySelector("p a"); //  p a {color :black}
+anchorElement.href = "https://academind.com";
