@@ -196,3 +196,48 @@ yjyj *= 5; -> yjyj *5
   - document.querySelector('some-css-selector'): 제공된 CSS 선택자에 의해 충족/선택된 첫 번째 HTML 요소.
 
   - document.querySelectorAll('some-css-selector'): 제공된 CSS 선택자에 의해 충족/선택된 일치하는 모든 HTML 요소를 선택한다.
+
+# Day - 35
+
+## DOM 조작 (내용, 속성값 변경 등)
+
+### 1. JS를 통한 새 HTML 요소 삽입
+
+- 3가지 단계를 통해 HTML 요소를 삽입한다.
+
+  - 1.  새로운 요소를 만든다
+
+    - ex. `let newAnchorElement = document.createElement("a");`
+
+          `newAnchorElement.href = "https://google.com";`
+          `newAnchorElement.textContent = "This leads to google!!";`
+
+  - 2. DOM에 넣어 줘야 하기 때문에 새로운 요소를 가지고 있어야 하는 부모 요소부터 접근을 해야한다.
+
+    - ex. `let firstParagraph = document.querySelector("p"); `
+
+  - 3. 부모 요소 컨텐츠에 새로운 요소를 삽입해야 한다.
+
+    - ex. firstParagraph.append(newAnchorElement);
+
+### 2. DOM 요소 삭제
+
+- 1. 삭제할 요소를 선택
+
+  - ex. let firstH1Element = document.querySelector("hi");
+
+- 2. 요소 삭제
+
+  -` firstH1Element.remove();`
+
+  - 또 다른 방법 - parentElement 선택하는것, 이 경우 body 안에서 removeChild를 요청하면 그 body에서 자식 요소를 삭제하도록 한다. but, 과거 버전의 브라우저에는 안통할수있다.
+
+    - `firstH1Element.parentElement.removeChild(firstH1Element);` 이 방법은 오래된 브라우저에서도 통함
+
+### 3. 기존 요소 이동
+
+- 이동할 요소를 추가할 위치의 부모 요소를 선택한다.
+
+- 요소를 추가하기전에 append나 insert를 불러서 해당 부모 요소 안으로 이동할 수 있게 해야한다.
+
+- ex. `firstParagraph.parentElement.append(firstParagraph);`
