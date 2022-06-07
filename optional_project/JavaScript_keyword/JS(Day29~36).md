@@ -197,7 +197,7 @@ yjyj *= 5; -> yjyj *5
 
   - document.querySelectorAll('some-css-selector'): 제공된 CSS 선택자에 의해 충족/선택된 일치하는 모든 HTML 요소를 선택한다.
 
-# Day - 35
+# Day - 35 ~ 36
 
 ## DOM 조작 (내용, 속성값 변경 등)
 
@@ -241,3 +241,27 @@ yjyj *= 5; -> yjyj *5
 - 요소를 추가하기전에 append나 insert를 불러서 해당 부모 요소 안으로 이동할 수 있게 해야한다.
 
 - ex. `firstParagraph.parentElement.append(firstParagraph);`
+
+### 4. innerHTML 속성
+
+- innerHTML 속성을 이용하여 텍스트나 혼합된 html을 출력시킨다.
+
+- 페이지를 구성하고 있는 다른 HTML 코드를 표시하는 것처럼 브라우저가 분석하고 표시하도록 할 수 있다.
+
+### 5. "click" 이벤트 리스너
+
+- 이벤트 리스너는 클릭 이벤트를 리슨할 수 있게 하는것이다.
+
+- `paragraphElement.addEventListener("click", changeParagraphText);`
+
+  - 괄호의 첫번째 매개변수는 이벤트의 유형중 click 이벤트를 두번째 매개변수에는 click이 발생할 때 어떤일이 일어나야 하는지 선언되어 있는 함수가 들어간다.
+
+### 6. "input" 이벤트 리스너
+
+- `inputElement.addEventListener("input", retrieveUserInput);`
+
+### 7. "상수" (Constants)
+
+- 변수에 한 번 저장하면 절대로 바뀌지 않는 값.
+
+- let이 아닌 const로 변수를 할당하면 이 변수가 처음에 할당되었던 값 이외에 다른 값은 가질 수 없다는 걸 명확하게 한다.
