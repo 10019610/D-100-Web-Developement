@@ -53,3 +53,57 @@
   - JS는 and 연산자를 우선순위로 평가한다. 그 이유로 or 과 and가 결합되어있다면 and 후 or 순이기때문에 한가지만 참이여도 참으로 나온다.
 
   - 우선순위를 위해 괄호를 추가할 수 있다.
+
+### 4. else
+
+- else 키워드는 if 조건문이 충족되지 않으면 실행되어야 하는 코드를 정의할 때 쓴다.
+
+### 5. 반복문
+
+- 반복문을 사용해 다양한 상황에 따라 특정 코드를 여러번 실행할 수 있다.
+
+- JS에는 for, for .. of , for .. in, while 반복문이 있다.
+
+  - for 반복문은 특정 코드 실행 횟수를 정의한다.
+
+  - for (let i = 0; i< 10; i = i++) {반복조건} : 일반적인 for 반복문 코드이다.
+
+    - 여기서 i는 반복을 의미하는 변수다.
+
+    - i가 1씩 증가(i++) 하며 10보다 작을때 다시 실행된다.
+
+  - for of 반복문은 배열의 모든 요소를 순환한 다음 모든 배열 요소로 작업을 수행한다.
+
+    - 따라서 for of는 배열 작업에 사용된다.
+
+    - const users = ["Max", "yj", "hj"];
+      for (const user of users) {
+      console.log(user);
+      }
+
+      - users 라는 배열을 개별 요소로 출력하기 위해 user라는 개별요소 이름을 지정한다.
+
+  - for in 반복문은 객체의 모든 속성을 반복할 수 있다. 따라서 객체에 사용된다.
+
+    - const loggedInUser = {
+      name: "YJ",
+      age: 27,
+      isAdmin: true,
+      };
+
+      for (const property in loggedInUser) {
+      console.log(property); --> 결과값으로 속성 이름만 나옴. name,age,isAdmin
+      console.log(loggedInUser[property]); --> 속성의 값이 나옴. YJ, 27, true
+      }
+
+  - while 반복문은 미리 특정 횟수를 정의하지 않고 객체나 배열을 통해 반복하지 않고 while 반복문을 사용하여 조건을 정의한다.
+
+    - 불리언 값으로 작업해서 반복문에서 특정 조건이 충족되는 한 반복문의 코드가 실행된다.
+
+    - let isFinished = false;
+
+      while (!isFinished) {
+      isFinished = confirm("Do you want to quit?"); --> 예 혹은 아니오로 대답한다.
+      }
+
+      console.log("Done!");
