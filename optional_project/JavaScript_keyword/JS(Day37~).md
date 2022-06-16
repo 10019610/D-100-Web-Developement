@@ -108,6 +108,14 @@
 
       console.log("Done!");
 
-# Day - 40
+# Day - 45
 
-## 마일스톤 프로젝트: 틱택토 게임 만들기
+## Third-Party Packages
+
+### 1. Third-Party Packages
+
+- Third-Party Packages란 간단한 코드 패키지나 코드 파일을 말한다.
+
+- 여러 프로젝트에서 반복해서 작성하는 특정 기능이나 스타일, 작업이 있을 때마다 해당 기능을 처음부터 계속해서 작성해야 한다면 시간이 낭비되고 오류가 발생하기 쉽기 때문에 그때 다른 사람이 작성한 Third-Party Packages를 활용한다.
+
+-
