@@ -147,3 +147,44 @@
   - 그리고 NodeJS 런타임 도구와 함께 자바스크립트를 이용해 모든 컴퓨터가 서버가 될 수 있다.
 
   - ex. HTML 명령을 동적으로 생성, JS와 NodeJS를 사용해 파일 시스템이나 DB에 접근하는 코드작성
+
+### 4. 사용자 지정 NodeJS 서버 생성
+
+- NodeJS에 내장된 기능인 require() 키워드를 이용해 요청과 응답을 처리하는 패키지를 이용한다.
+
+- require('http') 특수키워드는 HTTP 객체를 가져온다.
+
+  - 객체에 내장된 메서드 중 createServer 메서드를 이용해 웹 서버를 생성한다.
+
+  - createServer는 내부적으로 필요한 서버기능이 포함된 객체를 반환한다.
+
+### 5.request(요청) & response(응답) 생성
+
+- const http = require("http");
+
+  function handleRequest(request, response) {
+  if (request.url === "/currenttime") {
+  response.statusCode = 200;
+  response.end("<h1>" + new Date().toISOString() + "</h1>");
+  } else if (request.url === "/") {
+  response.statusCode = 200;
+  response.end("<h1>Hello World!!</h1>");
+  }
+  }
+
+  const server = http.createServer(handleRequest);
+
+  server.listen(3000);
+
+  // naver.com => Send a request to naver's server
+  // naver.com:80 => 기본 값 port
+
+  - statusCode는 브라우저에 요청이 성공했는지 여부를 알리는 방법
+
+    - 200이 성공적인 연결을 뜻한다.
+
+  - new Date().toISOString()를 이용해 타임스탬프를 얻을 수 있다.
+
+    - toISOString()는 날짜 객체를 문자열 표현으로 변환하여 읽을 수 있게 한다.
+
+    - toISOString()는 new Data 객체에서 호출할 수 있는 메서드이다.
