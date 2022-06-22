@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Test",
+    "address": "Teststreet,city",
+    "cuisine": "korea",
+    "website": "https://naver.com",
+    "description": "good!"
+  },
+  {
+    "name": "test2",
+    "address": "test2, text",
+    "cuisine": "japanesse",
+    "website": "https://google.com",
+    "description": "wow!"
+  },
+  {
+    "name": "restaurant 3",
+    "address": "goodgoodcity",
+    "cuisine": "american",
+    "website": "https://amanzon.com",
+    "description": "zz"
+  }
+]
