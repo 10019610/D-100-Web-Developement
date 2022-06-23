@@ -17,6 +17,10 @@
       <p>Find your next favorite restaurants with help of our other users!</p>
       <p>We found <%= numberOfRestaurants %> restaurants.</p>
       <!-- 여기서는 동적으로 레스토랑의 갯수가 변경되어야 한다. -->
+      <form action="/restaurants" method="GET">
+        <input type="hidden" value="<%= nextOrder %>" name="order" />
+        <button class="btn">Change Order</button>
+      </form>
       <ul id="restaurants-list">
         <% for (const restaurant of restaurants) { %> <%-
         include('includes/restaurants/restaurant-item', {restaurant:restaurant})

@@ -71,3 +71,11 @@
 ### 6. EJS를 이용한 일부 콘텐츠 렌더링
 
 - 콘텐츠가 필요한 부분에 <%- include('경로') %>
+
+### 7. uuid를 이용하여 id값 부여하기
+
+- const uuid = require('uuid')
+
+  - app.post("/recommend", function (req, res) {
+    const restaurant = req.body;
+    restaurant.id = uuid.v4();
