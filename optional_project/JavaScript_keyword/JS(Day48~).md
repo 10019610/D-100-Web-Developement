@@ -79,3 +79,9 @@
   - app.post("/recommend", function (req, res) {
     const restaurant = req.body;
     restaurant.id = uuid.v4();
+
+# Day - 54 ~ 56
+
+## 고급 자바스크립트 개념
+
+### 1. 
