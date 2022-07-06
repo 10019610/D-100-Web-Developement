@@ -10,8 +10,20 @@ class User {
 		this.address = {
 			street: street,
 			postalCode: postal,
-			city: city
+			city: city,
 		};
+	}
+
+	getUserWithSameEmail() {
+		return db.getDb().collection('users').findOne({ email: this.email });
+	}
+
+	async existsAlready() {
+		const existingUser = await this.getUserWithSameEmail();
+		if (existingUser) {
+			return true;
+		}
+		return false;
 	}
 
 	async signup() {
@@ -21,8 +33,12 @@ class User {
 			email: this.email,
 			password: hashedPassword,
 			name: this.name,
-			address: this.address
+			address: this.address,
 		});
+	}
+
+	hasMatchingPassword(hashedPassword) {
+		return bcrypt.compare(this.password, hashedPassword);
 	}
 }
 
